@@ -10,13 +10,18 @@ channel = "stable-24_05"
 requiredFiles = [".replit", "replit.nix", ".config"]
 
 [deployment]
-run = ["tsx", "index.ts"]
+run = ["sh", "-c", "NODE_ENV=production node dist/index.js"]
 deploymentTarget = "cloudrun"
 ignorePorts = false
+build = ["sh", "-c", "npm run build"]
 
 [[ports]]
 localPort = 3000
 externalPort = 80
+
+[[ports]]
+localPort = 5000
+externalPort = 5000
 
 [workflows]
 runButton = "Run"
