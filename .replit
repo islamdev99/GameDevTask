@@ -10,7 +10,7 @@ channel = "stable-24_05"
 requiredFiles = [".replit", "replit.nix", ".config"]
 
 [deployment]
-run = ["sh", "-c", "NODE_ENV=production node dist/index.js"]
+run = ["sh", "-c", "npx serve -s dist"]
 deploymentTarget = "cloudrun"
 ignorePorts = false
 build = ["sh", "-c", "npm run build"]
